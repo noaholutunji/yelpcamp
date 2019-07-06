@@ -28,7 +28,7 @@
          <div class="card mt-4 w-100" style="width: 50rem;">
            <div class="card-body">
          <div class="text-right">
-        <a href="{{ $campground->path().'/comments' }}" class="btn btn-success text-right">Add New Comment</a>  
+        <a href="" class="btn btn-success text-right">Add New Comment</a>  
        </div>
 
        
