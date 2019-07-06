@@ -25,11 +25,13 @@
   <h4>{{ $campground->name }}</h4>
    
     <a href="{{ $campground->path() }}"class="btn btn-primary">More Info</a>
+
     <form method="POST" action="{{ $campground->path() }}">
       @method('DELETE')
       @csrf
       <button class="mt-3 btn btn-danger btn-sm" type="submit">Delete</button>
     </form>
+    
   </div>
 </div>
 </div>         
