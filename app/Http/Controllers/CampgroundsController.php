@@ -44,4 +44,31 @@ class CampgroundsController extends Controller
 
         return redirect('/campgrounds');
     }
+
+    public function edit(Campground $campground)
+    {
+        return view('campgrounds.edit', compact('campground'));
+    }
+
+    public function update(Campground $campground)
+    {
+        if (auth()->user()->isNot($campground->owner)) {
+            abort(403);
+        }
+
+        $campground->update([
+            'name' => request('name'),
+            'image' => request('image'),
+            'description' => request('description')
+        ]);
+
+        return redirect($campground->path());
+    }
+
+    public function destroy(Campground $campground)
+    {
+        $campground->delete();
+        
+        return redirect('/campgrounds');
+    }
 }

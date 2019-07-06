@@ -5,7 +5,7 @@
 
 <header class="jumbotron">
          <div class="container">
-             <h1></span> Welcome To YelpCamp!</h1>
+             <h1><span class="glyphicon glyphicon-tent"></span>Welcome To YelpCamp!</h1>
              <p>View our hand-picked campgrounds from all over the world</p>
              <p>
                 <a class="btn btn-primary btn-lg" href="/campgrounds/create">Add New Campground</a>
@@ -25,6 +25,7 @@
   <h4>{{ $campground->name }}</h4>
    
     <a href="{{ $campground->path() }}"class="btn btn-primary">More Info</a>
+    <form method="POST" action="{{ $campground}}"></form>
   </div>
 </div>
 </div>         

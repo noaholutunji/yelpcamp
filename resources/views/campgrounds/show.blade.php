@@ -21,22 +21,18 @@
  
             <p> <em>Submitted By {{ Auth::user()->name }}</em></p>
                      
-           <a href="#" class="btn btn-warning">Edit Campground</a>
+           <a href="{{ $campground->path().'/edit' }}" class="btn btn-warning">Edit Campground</a>
             </div>
            </div>
       
          <div class="card mt-4 w-100" style="width: 50rem;">
            <div class="card-body">
          <div class="text-right">
-        <a href="/campgrounds/{campground}/comments" class="btn btn-success text-right">Add New Comment</a>  
+        <a href="{{ $campground->path().'/comments' }}" class="btn btn-success text-right">Add New Comment</a>  
        </div>
 
-       <hr>
-                
-        <div class="row">
-        <div class="col-md-12">
-        <strong>{{ Auth::user()->name }}</strong>
-        <span class="pull-right">10 days ago</span>
+       
+       
           <div>
   </div>
 </div>
