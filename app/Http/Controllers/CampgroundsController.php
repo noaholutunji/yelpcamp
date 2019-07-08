@@ -17,9 +17,6 @@ class CampgroundsController extends Controller
 
     public function show(Campground $campground)
     {
-        if (auth()->user()->isNot($campground->owner)) {
-            abort(403);
-        }
         return view('campgrounds.show', compact('campground'));
     }
 
@@ -67,8 +64,11 @@ class CampgroundsController extends Controller
 
     public function destroy(Campground $campground)
     {
+    
         $campground->delete();
         
         return redirect('/campgrounds');
     }
+
+    
 }

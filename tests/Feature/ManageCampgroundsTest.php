@@ -137,7 +137,11 @@ class ManageCampgroundsTest extends TestCase
         $this->actingAs($campground->owner)
                ->delete($campground->path())
               ->assertRedirect('/campgrounds');
-
+           
+    
         $this->assertDatabaseMissing('campgrounds', $campground->only('id'));
     }
+  
+        
+    
 }
