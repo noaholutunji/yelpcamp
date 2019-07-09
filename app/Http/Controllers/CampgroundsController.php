@@ -33,25 +33,24 @@ class CampgroundsController extends Controller
             'description' => 'required',
             ]);
 
-        
-
-        auth()->user()->campgrounds()->create($attributes);
-
-        
-
+            auth()->user()->campgrounds()->create($attributes);
+    
         return redirect('/campgrounds');
     }
 
     public function edit(Campground $campground)
     {
+        $this->authorize('update', $campground);
+
+
         return view('campgrounds.edit', compact('campground'));
     }
 
     public function update(Campground $campground)
     {
-        if (auth()->user()->isNot($campground->owner)) {
-            abort(403);
-        }
+        
+        $this->authorize('update', $campground);
+
 
         $campground->update([
             'name' => request('name'),
@@ -60,6 +59,8 @@ class CampgroundsController extends Controller
         ]);
 
         return redirect($campground->path());
+
+        $attributes ['owner_id'] = auth()->id();
     }
 
     public function destroy(Campground $campground)

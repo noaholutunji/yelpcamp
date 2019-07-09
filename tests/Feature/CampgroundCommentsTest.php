@@ -22,7 +22,7 @@ class CampgroundCommentsTest extends TestCase
 
     /** @test */
 
-    public function only_the_owner_of_a_project_may_add_comments()
+    public function only_the_owner_of_a_campground_may_add_comments()
     {
         $this->signIn();
 

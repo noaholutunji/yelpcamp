@@ -4,15 +4,15 @@ namespace App\Policies;
 
 use App\User;
 use App\Campground;
-
+use App\Comment;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class CampgroundPolicy
+class CommentPolicy
 {
     use HandlesAuthorization;
 
-    public function update(User $user, Campground $campground)
+    public function update(User $user, Comment $comment)
     {
-        return $campground->owner_id ==$user->id;
+        return $comment->owner_id == $user->id;
     }
 }

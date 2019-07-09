@@ -47,25 +47,7 @@ class ManageCampgroundsTest extends TestCase
         $this->get('/campgrounds')->assertSee($attributes['name']);
     }
 
-    /** @test */
-
-    public function a_user_can_update_a_campground()
-    {
-        $this->signIn();
-
-        $this->withoutExceptionHandling();
-
-        $campground = factory('App\Campground')->create(['owner_id' => auth()->id()]);
-        $this->patch($campground->path(), [
-         'name' => 'Changed',
-         'image' => 'Changed',
-         'description' => 'Changed'
-    ])->assertRedirect($campground->path());
-
-        $this->get($campground->path().'/edit')->assertok();
-
-        $this->assertDatabaseHas('campgrounds', ['name' => 'Changed', 'image' => 'Changed', 'description' => 'Changed']);
-    }
+    
 
     /** @test */
     public function a_user_can_view_their_campground()
@@ -142,6 +124,24 @@ class ManageCampgroundsTest extends TestCase
         $this->assertDatabaseMissing('campgrounds', $campground->only('id'));
     }
   
+    public function a_user_can_update_a_campground()
+    {
+        $this->signIn();
         
-    
+        $this->withoutExceptionHandling();
+
+        $campground = CampgroundFactory::create();
+        
+
+        $this->actingAs($campground->owner)
+             ->patch($campground->path(), $attributes = [
+         'name' => 'Changed',
+         'image' => 'Changed',
+         'description' => 'Changed'
+    ])->assertRedirect($campground->path());
+
+        $this->get($campground->path().'/edit')->assertok();
+
+        $this->assertDatabaseHas('campgrounds', $attributes);
+    }
 }
