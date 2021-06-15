@@ -14,11 +14,10 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    
-                        <li><a href="#">Signed In As {{ Auth::user()->name }} </a></li>
-                        <li><a href="/logout">Logout</a></li>
-                    
+                    <li><a href="#">Signed In As {{ Auth::user()->name }} </a></li>
+                    <li><a href="/logout">Logout</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    </body>
