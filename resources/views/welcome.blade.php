@@ -8,19 +8,18 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
     </head>
     <body>
-
-<div id="landing-header">
- 		<h1><span class="glyphicon glyphicon-tent"></span>Welcome to YelpCamp!</h1>
-		<a href="/campgrounds" class="btn btn-lg btn-success">View All Campgrounds</a>
+    <div id="landing-header">
+        <h1><span class="glyphicon glyphicon-tent"></span>Welcome to YelpCamp!</h1>
+        <a href="/campgrounds" class="btn btn-lg btn-success">View All Campgrounds</a>
     </div>
-    
-    <ul class="slideshow">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
 
-</body>
+        <ul class="slideshow">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        </ul>
+
+    </body>
     </html>
