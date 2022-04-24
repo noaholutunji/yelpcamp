@@ -17,7 +17,7 @@ class CreateCampgroundsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('owner_id');
             $table->string('name');
-            $table->binary('image');
+            $table->string('image');
             $table->text('description');
             $table->timestamps();
 

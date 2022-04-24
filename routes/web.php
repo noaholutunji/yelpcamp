@@ -20,9 +20,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/campgrounds', 'CampgroundsController@index');
     Route::get('/campgrounds/create', 'CampgroundsController@create');
     Route::get('/campgrounds/{campground}', 'CampgroundsController@show');
+    Route::get('/campgrounds/{campground}/edit', 'CampgroundsController@edit');
+    Route::patch('/campgrounds/{campground}', 'CampgroundsController@update');
     Route::post('/campgrounds', 'CampgroundsController@store');
+    Route::delete('/campgrounds/{campground}', 'CampgroundsController@destroy');
 
-    Route::post('/campgrounds/{campground}/comments', 'CampgroundCommentsController@store');
+    Route::post('/campgrounds/{campground}/comments/edit', 'CampgroundCommentsController@store');
 
     Route::get('/home', 'HomeController@index')->name('home');
 });
