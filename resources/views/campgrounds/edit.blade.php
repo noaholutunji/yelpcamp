@@ -25,6 +25,7 @@
                 </div>
             </form>
             <a href="/campgrounds">Go Back</a>
+    
         </div>
     </div>
     @endsection
