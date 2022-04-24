@@ -12,5 +12,7 @@ class CampgroundPolicy
     public function update(User $user, Campground $campground)
     {
         return $user->is($campground->owner);
+        
+        
     }
 }
