@@ -14,8 +14,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
          'App\Campground' => 'App\Policies\CampgroundPolicy',
+         
     ];
 
+    
     /**
      * Register any authentication / authorization services.
      *
