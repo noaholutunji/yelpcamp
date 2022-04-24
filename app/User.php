@@ -28,6 +28,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function campgrounds()
+    {
+        return $this->hasMany(Campground::class, 'owner_id');
+    }
+
     /**
      * The attributes that should be cast to native types.
      *

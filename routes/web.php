@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/campgrounds', 'CampgroundsController@index');
+    Route::get('/campgrounds/create', 'CampgroundsController@create');
+    Route::get('/campgrounds/{campground}', 'CampgroundsController@show');
+    Route::post('/campgrounds', 'CampgroundsController@store');
+
+    Route::post('/campgrounds/{campground}/comments', 'CampgroundCommentsController@store');
+
+    Route::get('/home', 'HomeController@index')->name('home');
+});
+
+
+Auth::routes();
