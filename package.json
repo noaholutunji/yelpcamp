@@ -24,6 +24,6 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "heroku": "^7.26.2"
+        "heroku": "^8.0.1"
     }
 }
